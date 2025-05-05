@@ -3,8 +3,8 @@
 }
 
 :root {
-  height: 100%;
-  margin: 0;
+  height: auto;
+  min-height: 100%;
   
   --background: url(./Imagens/Dark-mode.png) no-repeat top center / cover;
   --text-color: white;
@@ -27,8 +27,9 @@
 body {
   background: var(--background);
   background-attachment: scroll;
-  min-height: 100vh;
-  min-width: 100vw;
+  height: auto;
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
 body.fade-out {
