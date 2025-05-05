@@ -24,12 +24,18 @@
   --link-border: rgba(0, 0, 0, 0.5);
 }
 
-body {
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: var(--background);
-  background-attachment: scroll;
-  height: auto;
-  background-repeat: repeat-y;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 body.fade-out {
