@@ -11,7 +11,7 @@ function toggleMode() {
   
       // Atualiza a imagem com base no tema
       if (html.classList.contains('light')) {
-        profileImage.src = './Imagens/Duda.png'; // imagem para light mode
+        profileImage.src = './Imagens/Duda-light.png'; // imagem para light mode
       } else {
         profileImage.src = './Imagens/Duda-light.png'; // imagem para dark mode
       }
