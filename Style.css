@@ -6,34 +6,29 @@
   height: 100%;
   margin: 0;
   
-    --text-color: white;
-    --bg-url: url(./Imagens/Dark-mode.png);
-    --switch-button: url(./Imagens/MoonStars.png);
-    --link-box: rgba(100, 100, 100, 0.1); 
-    --link-hoover: rgba(0, 0, 0, 0.7);
-    --link-border: rgba(255, 255, 255, 0.5);
+  --background: url(./Imagens/Dark-mode.png) no-repeat top center / cover;
+  --text-color: white;
+  --switch-button: url(./Imagens/MoonStars.png);
+  --link-box: rgba(100, 100, 100, 0.1);
+  --link-hoover: rgba(0, 0, 0, 0.7);
+  --link-border: rgba(255, 255, 255, 0.5);
 
 }
 
 .light {
-    --text-color: black;
-    --bg-url: url(./Imagens/Light-mode.png);
-    --switch-button: url(./Imagens/Sun.png);
-    --link-box: rgba(255, 255, 255, 0.1);
-    --link-hoover: rgba(255, 255, 255, 0.7);
-    --link-border: rgba(0, 0, 0, 0.5);
+  --background: url(./Imagens/Light-mode.png) no-repeat top center / cover;
+  --text-color: black;
+  --switch-button: url(./Imagens/Sun.png);
+  --link-box: rgba(255, 255, 255, 0.1);
+  --link-hoover: rgba(255, 255, 255, 0.7);
+  --link-border: rgba(0, 0, 0, 0.5);
 }
 
 body {
+  background: var(--background);
   background-attachment: scroll;
   min-height: 100vh;
   min-width: 100vw;
-  background-image: var(--bg-url);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  
-
 }
 
 body.fade-out {
