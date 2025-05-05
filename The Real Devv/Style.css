@@ -1,0 +1,249 @@
+* {
+    list-style: none;
+}
+
+:root {
+  height: 100%;
+  margin: 0;
+  
+    --text-color: white;
+    --bg-url: url(./Imagens/Dark-mode.png);
+    --switch-button: url(./Imagens/MoonStars.png);
+    --link-box: rgba(100, 100, 100, 0.1); 
+    --link-hoover: rgba(0, 0, 0, 0.7);
+    --link-border: rgba(255, 255, 255, 0.5);
+
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./Imagens/Light-mode.png);
+    --switch-button: url(./Imagens/Sun.png);
+    --link-box: rgba(255, 255, 255, 0.1);
+    --link-hoover: rgba(255, 255, 255, 0.7);
+    --link-border: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+
+background-image: var(--bg-url);
+background-repeat: no-repeat;
+background-position: top center;
+background-size: cover;
+z-index: -1;
+
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  body.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+
+
+body * {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: oblique;
+    color: var(--text-color);
+  }
+  
+#Container {
+    
+    justify-content: center;
+    width:  360px;
+    height:   1000px;
+    margin: auto;
+}
+  
+#Container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+#Profile img {
+    display: block;
+    margin: auto;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#Profile p {
+    text-align: center;   
+}
+
+#Switch {
+    display: flex;
+    width: 50px;
+    position: relative;
+    margin: auto;
+    
+}
+
+#Switch button {
+    width: 24px;
+    height: 24px;
+    transition: transform 1s, background-color 1s;
+    transition: background 1s;
+    background: white var(--switch-button);
+    background-size: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+    border-radius: 50%;
+    
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    right: 01;
+    z-index: 1;
+    
+    transition: left 0.4s ease, right 0.4s ease, background 0.4s ease;
+}
+
+.light #Switch button {
+    right: 0;
+    left: initial;
+}
+
+#Switch span {
+    
+    display: block;
+    width: 50px;
+    height: 18px;
+    background: rgba(100, 100, 100, 0.3); 
+    border: 1px grey solid;
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+
+#Socials {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 25px;
+    
+    gap: 25px;
+    font-size: 24px;
+    transition: background (2s);
+    
+
+}
+
+#Socials a:hover {
+    
+    font-size: 24px;
+    transition: transform 1s, background-color 1s;
+    border-radius: 50%;
+    transform: scale(0.9);
+}
+
+#Footer {
+  display: block;
+  font-size: 10px;
+
+}
+
+#Footer a {
+    display: flex;
+    width: 100px;
+    height: 20px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 50%;
+    
+ 
+}
+
+
+ul {
+    box-sizing: border-box; 
+    width: 0 360px;  
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    
+    
+}
+
+ul li a {
+    box-sizing: border-box; 
+    width: 0 360px;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 1px solid var(--link-border);
+    border-radius: 50px;
+    background-color: var(--link-box);   
+    backdrop-filter: blur(5px);
+    transition: background 2s;
+}
+
+ul li a:hover {
+    background: var(--link-hoover);
+    
+    
+  }
+
+  /* --- Efeito de entrada em cascata (de cima para baixo) --- */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  /* Delays para cascata */
+  .fade-in-up:nth-child(1) { animation-delay: 0.2s; }
+  .fade-in-up:nth-child(2) { animation-delay: 0.4s; }
+  .fade-in-up:nth-child(3) { animation-delay: 0.6s; }
+  .fade-in-up:nth-child(4) { animation-delay: 0.8s; }
+  .fade-in-up:nth-child(5) { animation-delay: 1s; }
+  .fade-in-up:nth-child(6) { animation-delay: 1.2s; }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Overlay de transição visual */
+#overlay-fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+  }
+  
+  #overlay-fade.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
