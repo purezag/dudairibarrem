@@ -2,18 +2,18 @@ function toggleMode() {
     const html = document.documentElement;
     const overlay = document.getElementById('overlay-fade');
     const fadeElements = document.querySelectorAll('.fade-in-up');
-    const profileImage = document.querySelector('#Profile img'); // <-- imagem
+    const profileImage = document.querySelector('#Profile img'); 
   
     overlay.classList.add('active');
   
     setTimeout(() => {
       html.classList.toggle('light');
   
-      // Atualiza a imagem com base no tema
+      
       if (html.classList.contains('light')) {
-        profileImage.src = './Imagens/Duda-light.png'; // imagem para light mode
+        profileImage.src = './Imagens/Duda-light.png'; 
       } else {
-        profileImage.src = './Imagens/Duda-light.png'; // imagem para dark mode
+        profileImage.src = './Imagens/Duda-light.png';  
       }
   
       fadeElements.forEach((el) => {
